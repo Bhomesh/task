@@ -1,0 +1,18 @@
+version: '1'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - mern
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - mern
+
+networks:
+  mern:
+    driver: bridge
